@@ -9,11 +9,17 @@ export const useWebRTC = (myId: string | null) => {
 
   useEffect(() => {
     if (!myId) return;
-    const WS_URL = process.env.WS_URL;
+    const WS_URL = process.env.NEXT_PUBLIC_WS_URL!;
     setStatus('connecting');
+
+    if (!WS_URL) {
+        throw new Error("Environmental variable NEXT_PUBLIC_WS_URL not defined");
+    }
     
     try {
       socket.current = new WebSocket(WS_URL);
+
+      
 
       socket.current.onopen = () => {
         setStatus('connected');
