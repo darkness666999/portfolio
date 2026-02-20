@@ -2,4 +2,4 @@
 Personal knowledge portfolio
 
 
-It includes the forntend developmmen of Ephimero the secured P2P chat application
+It includes the frontend development of Ephimero the secured P2P chat application
