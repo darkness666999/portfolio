@@ -9,7 +9,7 @@ export const useWebRTC = (myId: string | null) => {
 
   useEffect(() => {
     if (!myId) return;
-    const WS_URL = 'wss://ephimero.onrender.com/signal';
+    const WS_URL = process.env.WS_URL;
     setStatus('connecting');
     
     try {
