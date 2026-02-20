@@ -3,8 +3,10 @@
 import { Skill } from "../components/ui/Skill";
 import { Avatar } from "../components/ui/Avatar";
 import { SectionHeader } from "../components/ui/SectionHeader";
-import { Experience } from "../components/ui/Experience"; // New Component
+import { Experience } from "../components/ui/Experience";
 import { Card } from "../components/ui/Card";
+import { EphimeroChat } from "../components/ui/EphimeroChat";
+import { InfoSection } from "../components/ui/InfoSection";
 import angeloIcon from "../assets/images/angelo.jpg";
 import { motion } from "framer-motion";
 import { Award, Layers, Zap, Cloud, Server, Infinity, Globe } from "lucide-react";
@@ -70,6 +72,31 @@ export default function HomePage() {
         <Skill label="DevOps" value="CI/CD" trend="K8s/Docker" status="success" icon={<Infinity className="text-cyan-400" size={18} />}/>
       </div>
 
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
+        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-lg"></div>
+        <Card className="relative p-6 bg-[#0a0f1a] border-slate-800 overflow-hidden">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <h3 className="text-2xl font-black text-white mb-2">Ephimero (MVP)</h3>
+              <p className="text-slate-400 text-sm leading-relaxed max-w-md">
+                A private P2P communication experiment. (Yes. A chat. Groundbreaking, I know.)
+                Deterministic identity via SHA-256. No accounts. No databases. No server memory of your existence.
+                Just you, your peer, and the ephemeral magic of WebRTC. 
+              </p>
+              <InfoSection />
+            </div>
+            <div className="w-full md:w-[400px]">
+              <EphimeroChat />
+            </div>
+          </div>
+        </Card>
+      </motion.div>
+
       {/* 3. INTERACTIVE HISTORY & PROJECTS */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column: Experience */}
@@ -80,21 +107,7 @@ export default function HomePage() {
 
         {/* Right Column: Sidebar */}
         <div className="space-y-6">
-          <SectionHeader title="GitHub & Resources" />
-          
-          {/* GitHub Card */}
-          <Card className="p-6 bg-slate-900/50 border-slate-800">
-            <h3 className="font-bold text-lg mb-4 text-cyan-400">Featured Repo</h3>
-            <p className="text-sm text-gray-400 mb-6">Explore the architecture of this dashboard and other projects.</p>
-            <a 
-              href="https://github.com/darkness666999" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block w-full text-center py-3 bg-white text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors"
-            >
-              View GitHub Profile
-            </a>
-          </Card>
+          <SectionHeader title="GitHub & Resources" />         
           
           {/* Languages Section */}
           <Card className="p-6 bg-slate-900/40 border-slate-800">
@@ -146,7 +159,21 @@ export default function HomePage() {
                 <li>• New York Metro Area</li>
                 <li>• Global Remote</li>
             </ul>
-          </Card>
+          </Card>  
+
+          {/* GitHub Card */}
+          <Card className="p-6 bg-slate-900/50 border-slate-800">
+            <h3 className="font-bold text-lg mb-4 text-cyan-400">Featured Repo</h3>
+            <p className="text-sm text-gray-400 mb-6">Explore the architecture of this dashboard and other projects.</p>
+            <a 
+              href="https://github.com/darkness666999" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block w-full text-center py-3 bg-white text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors"
+            >
+              View GitHub Profile
+            </a>
+          </Card>        
         </div>
       </div>
     </div>
