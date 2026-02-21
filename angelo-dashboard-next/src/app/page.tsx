@@ -161,6 +161,48 @@ export default function HomePage() {
             </ul>
           </Card>  
 
+          {/* Ephimero Story Card */}
+          <Card className="p-8 bg-slate-900/60 border-slate-800 hover:border-cyan-500/40 transition-all">
+            <div className="flex justify-between items-start mb-6">
+              <h3 className="font-bold text-lg mb-2">
+                Engineering Uptime Without Paying
+              </h3>              
+              <span className="text-xs font-mono text-cyan-400 tracking-widest">
+                SYSTEM DESIGN
+              </span>
+            </div>
+            <h4 className="font-bold text-sm mb-2">-How Ephimero Stays Awake-</h4>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl">
+              Ephimero started as a lightweight WebRTC signaler for secure P2P chat. Free-tier hosts sleep after inactivity,
+              so I engineered a zero-cost worker + telemetry system. Observability, retention, and self-pruning all included.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-slate-300 mb-6">
+              <ul className="space-y-2">
+                <li>• Redis (30MB constraint)</li>
+                <li>• Timestamp-based eviction</li>
+                <li>• FastAPI orchestration layer</li>
+              </ul>
+              <ul className="space-y-2">
+                <li>• Self-triggering worker</li>
+                <li>• 7 days rolling telemetry</li>
+                <li>• Zero USDs uptime strategy</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://www.angeloaraya.com/theblog"
+                target="_blank"
+                className="px-4 py-2 bg-purple-500/10 border border-purple-500/30 text-purple-400 rounded-md text-sm font-semibold hover:bg-purple-500/20 transition-all"
+              >
+                Read the full story
+              </a>
+            </div>
+            
+
+          </Card>
+
           {/* GitHub Card */}
           <Card className="p-6 bg-slate-900/50 border-slate-800">
             <h3 className="font-bold text-lg mb-4 text-cyan-400">Featured Repo</h3>
